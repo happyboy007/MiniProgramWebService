@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns="urn:nhibernate-mapping-2.2"
+ namespace="MobileWebService.Models"
+ assembly="MobileWebService">
+	<!-- class name="UserInfo" schema="public" table="tblUserInfo" -->       
+	<class name="UserInfo"  table="tbluserinfo">
+		<id name="ID" column="id" type="UInt32">
+			<generator class="identity" />	 
+		</id>
+		<property name="LoginName" column="LoginName" type="string" />
+		<property name="UserName" column="UserName" type="string" />
+		<property name="Password" column="Password" type="string" />
+		<property name="UserTypeID" column="UserTypeID" type="UInt32" />
+		<property name="ICNo" column="ICNo" type="UInt32" />
+		<property name="JobTypeName" column="JobTypeName" type="string" />
+		<property name="Roles" column="Roles" type="string" />
+		<property name="CompanyName" column="CompanyName" type="string" />
+		<property name="Mobile" column="Mobile" type="string" />
+		<property name="IsEnable" column="IsEnable" type="int" />
+		<property name="Remark" column="Remark" type="string" />
+		<property name="Field1" column="Field1" type="string" />
+
+	</class>
+</hibernate-mapping>

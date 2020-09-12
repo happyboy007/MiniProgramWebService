@@ -4,13 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-
+using NHibernate.NetCore; 
 namespace MobileWebService
 {
     public class Startup
@@ -18,6 +17,11 @@ namespace MobileWebService
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            if (configuration != null && configuration["AppID"] != "")
+            {
+                WxConfig.AppID = configuration["AppID"];
+                WxConfig.AppSecret = configuration["AppSecret"];
+            }
         }
 
         public IConfiguration Configuration { get; }
@@ -25,6 +29,15 @@ namespace MobileWebService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //NHibernate配置文件的路径
+            var path = System.IO.Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "hibernate.cfg.xml");
+
+            //添加NHibernate相关服务
+            services.AddHibernate(path);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
             services.AddControllers();
         }
 
