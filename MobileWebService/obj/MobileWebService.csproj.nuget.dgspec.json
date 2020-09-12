@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\Ting\\Source\\Repos\\MobileWebService\\MobileWebService.csproj": {}
+    "d:\\Users\\Ting\\Source\\Repos\\MiniProgramWebService\\MobileWebService\\MobileWebService.csproj": {}
   },
   "projects": {
-    "D:\\Users\\Ting\\Source\\Repos\\MobileWebService\\MobileWebService.csproj": {
+    "d:\\Users\\Ting\\Source\\Repos\\MiniProgramWebService\\MobileWebService\\MobileWebService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\Ting\\Source\\Repos\\MobileWebService\\MobileWebService.csproj",
+        "projectUniqueName": "d:\\Users\\Ting\\Source\\Repos\\MiniProgramWebService\\MobileWebService\\MobileWebService.csproj",
         "projectName": "MobileWebService",
-        "projectPath": "D:\\Users\\Ting\\Source\\Repos\\MobileWebService\\MobileWebService.csproj",
+        "projectPath": "d:\\Users\\Ting\\Source\\Repos\\MiniProgramWebService\\MobileWebService\\MobileWebService.csproj",
         "packagesPath": "C:\\Users\\Ting\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\Ting\\Source\\Repos\\MobileWebService\\obj\\",
+        "outputPath": "d:\\Users\\Ting\\Source\\Repos\\MiniProgramWebService\\MobileWebService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Xamarin\\NuGet\\"
@@ -41,6 +41,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.21, )"
+            },
+            "NHibernate": {
+              "target": "Package",
+              "version": "[5.3.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
